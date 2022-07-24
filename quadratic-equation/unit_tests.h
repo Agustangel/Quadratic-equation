@@ -13,3 +13,5 @@ struct quadratic_test
 };
 
 void quadratic_test_run(struct quadratic_test*, int*);
+
+void set_color(const char* color);

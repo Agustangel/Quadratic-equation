@@ -1,5 +1,4 @@
 
-
 #include <stdio.h>
 #include <assert.h>
 #include <math.h>
@@ -8,9 +7,21 @@
 #include "quadratic.h"
 
 
+void set_color(const char* color)
+{
+    printf("%s\n", color);
+}
+
+void reset_color()
+{
+    printf(RESET);
+}
+
+
 void clear_buffer ()
 {
-    while ( getchar() != '\n' );
+    char ch = 0;
+    while (((ch = getchar()) != '\n') || (ch != EOF));
 }
 
 int input_coefficients(double* a, double* b, double* c)
