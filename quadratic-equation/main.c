@@ -1,4 +1,7 @@
 
+/*! \mainpage Square equation solver
+ * This is a simple program solving square equation */
+
 #include <stdio.h>
 #include <assert.h>
 #include <math.h>

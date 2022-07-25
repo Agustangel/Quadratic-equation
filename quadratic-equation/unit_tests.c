@@ -31,12 +31,13 @@ void quadratic_test_run(struct quadratic_test* test, int* test_number)
 
     if (is_equal(x_1, test->x_1_expected) && is_equal(x_2, test->x_2_expected))
     {
-        printf("TEST %d: a = %lf, b = %lf, c = %lf SUCCESS, expected: x_1 = %lf, x_2 = %lf, got: x_1 = %lf, x_2 = %lf\n", *test_number, test->a, test->b, test->c, test->x_1_expected, test->x_2_expected, x_1, x_2);
+        printf(BLUE "TEST %d" RESET ": a = %lf, b = %lf, c = %lf " GREEN "SUCCESS" RESET ", expected: x_1 = %lf, x_2 = %lf, got: x_1 = %lf, x_2 = %lf\n", *test_number, test->a, test->b, test->c, \
+                                                                                                                        test->x_1_expected, test->x_2_expected, x_1, x_2);
     }
 
     else
     {
-        printf("TEST %d: a = %lf, b = %lf, c = %lf,FAIL expected: x_1 = %lf, x_2 = %lf, got: x_1 = %lf, x_2 = %lf\n", *test_number, test->a, test->b, test->c, \
+        printf(BLUE "TEST %d" RESET ": a = %lf, b = %lf, c = %lf, " RED "EXPECTED FAIL" RESET ": x_1 = %lf, x_2 = %lf, got: x_1 = %lf, x_2 = %lf\n", *test_number, test->a, test->b, test->c, \
                                                                                                                        test->x_1_expected, test->x_2_expected, x_1, x_2);
     }
 
