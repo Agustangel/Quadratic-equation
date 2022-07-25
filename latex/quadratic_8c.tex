@@ -1,0 +1,191 @@
+\hypertarget{quadratic_8c}{}\doxysection{C\+:/\+Users/fox5r/programming/c-\/course/quadratic-\/equation/quadratic.c File Reference}
+\label{quadratic_8c}\index{C:/Users/fox5r/programming/c-\/course/quadratic-\/equation/quadratic.c@{C:/Users/fox5r/programming/c-\/course/quadratic-\/equation/quadratic.c}}
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$assert.\+h$>$}\newline
+{\ttfamily \#include $<$math.\+h$>$}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}quadratic.\+h\char`\"{}}\newline
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{quadratic_8c_a708dcec6118a7abf8fa97581e915d7e4}{set\+\_\+color}} (const char $\ast$color)
+\begin{DoxyCompactList}\small\item\em Sets the color of console output. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{quadratic_8c_a4bc9f1f5ef0fc8b14c38fc821071c037}{reset\+\_\+color}} ()
+\begin{DoxyCompactList}\small\item\em Resets console output color. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{quadratic_8c_afa847549e9dc6e4f49f651623bc456dc}{clear\+\_\+buffer}} ()
+\begin{DoxyCompactList}\small\item\em Function clearing input buffer after scanf failure. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{quadratic_8c_a901f6d32a2b45e32e9918aeb75fe3464}{input\+\_\+coefficients}} (double $\ast$a, double $\ast$b, double $\ast$c)
+\begin{DoxyCompactList}\small\item\em Function that receives input from user. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{quadratic_8c_ac186fe73c9f151da990ab0be1be7ccc4}{is\+\_\+equal}} (double lhs, double rhs)
+\begin{DoxyCompactList}\small\item\em Function that compares two double numbers. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{quadratic_8c_ab89a2de1a53b9c9a396f1f76edc0289c}{is\+\_\+zero}} (double comparison)
+\begin{DoxyCompactList}\small\item\em Function that compares double number to zero. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{quadratic_8c_a6fd48a4372704606eb5aa285476d7854}{solve\+\_\+linear\+\_\+equation}} (double b, double c, double $\ast$x\+\_\+1, double $\ast$x\+\_\+2)
+\begin{DoxyCompactList}\small\item\em Function that solves linear equation. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{quadratic_8c_a5474999d85c608978cb503a0d4e657b9}{solve\+\_\+quadratic\+\_\+equation}} (double a, double b, double c, double $\ast$x\+\_\+1, double $\ast$x\+\_\+2)
+\begin{DoxyCompactList}\small\item\em Function that solves the equation. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{quadratic_8c_a89ce9db88e72091cd4621b795ea883a3}{solve\+\_\+equation}} (double a, double b, double c, double $\ast$x\+\_\+1, double $\ast$x\+\_\+2)
+\begin{DoxyCompactList}\small\item\em Function that solves the equation. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{quadratic_8c_a0694de4879b3c3d55b49cd9e5865f1d5}{output\+\_\+roots}} (int number\+\_\+roots, double x\+\_\+1, double x\+\_\+2)
+\begin{DoxyCompactList}\small\item\em Function that prints roots to the screen. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{quadratic_8c_afa847549e9dc6e4f49f651623bc456dc}\label{quadratic_8c_afa847549e9dc6e4f49f651623bc456dc}} 
+\index{quadratic.c@{quadratic.c}!clear\_buffer@{clear\_buffer}}
+\index{clear\_buffer@{clear\_buffer}!quadratic.c@{quadratic.c}}
+\doxysubsubsection{\texorpdfstring{clear\_buffer()}{clear\_buffer()}}
+{\footnotesize\ttfamily void clear\+\_\+buffer (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Function clearing input buffer after scanf failure. 
+
+\mbox{\Hypertarget{quadratic_8c_a901f6d32a2b45e32e9918aeb75fe3464}\label{quadratic_8c_a901f6d32a2b45e32e9918aeb75fe3464}} 
+\index{quadratic.c@{quadratic.c}!input\_coefficients@{input\_coefficients}}
+\index{input\_coefficients@{input\_coefficients}!quadratic.c@{quadratic.c}}
+\doxysubsubsection{\texorpdfstring{input\_coefficients()}{input\_coefficients()}}
+{\footnotesize\ttfamily int input\+\_\+coefficients (\begin{DoxyParamCaption}\item[{double $\ast$}]{a,  }\item[{double $\ast$}]{b,  }\item[{double $\ast$}]{c }\end{DoxyParamCaption})}
+
+
+
+Function that receives input from user. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em function} & -\/ pointers to the corresponding coefficients of the equation. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+result -\/ INCORRECT\+\_\+\+INPUT or 0. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{quadratic_8c_ac186fe73c9f151da990ab0be1be7ccc4}\label{quadratic_8c_ac186fe73c9f151da990ab0be1be7ccc4}} 
+\index{quadratic.c@{quadratic.c}!is\_equal@{is\_equal}}
+\index{is\_equal@{is\_equal}!quadratic.c@{quadratic.c}}
+\doxysubsubsection{\texorpdfstring{is\_equal()}{is\_equal()}}
+{\footnotesize\ttfamily int is\+\_\+equal (\begin{DoxyParamCaption}\item[{double}]{lhs,  }\item[{double}]{rhs }\end{DoxyParamCaption})}
+
+
+
+Function that compares two double numbers. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em function} & -\/ two double numbers. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+result -\/ EQUAL or UNEQUAL. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{quadratic_8c_ab89a2de1a53b9c9a396f1f76edc0289c}\label{quadratic_8c_ab89a2de1a53b9c9a396f1f76edc0289c}} 
+\index{quadratic.c@{quadratic.c}!is\_zero@{is\_zero}}
+\index{is\_zero@{is\_zero}!quadratic.c@{quadratic.c}}
+\doxysubsubsection{\texorpdfstring{is\_zero()}{is\_zero()}}
+{\footnotesize\ttfamily int is\+\_\+zero (\begin{DoxyParamCaption}\item[{double}]{comparison }\end{DoxyParamCaption})}
+
+
+
+Function that compares double number to zero. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em function} & -\/ double number. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+result -\/ EQUAL or UNEQUAL. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{quadratic_8c_a0694de4879b3c3d55b49cd9e5865f1d5}\label{quadratic_8c_a0694de4879b3c3d55b49cd9e5865f1d5}} 
+\index{quadratic.c@{quadratic.c}!output\_roots@{output\_roots}}
+\index{output\_roots@{output\_roots}!quadratic.c@{quadratic.c}}
+\doxysubsubsection{\texorpdfstring{output\_roots()}{output\_roots()}}
+{\footnotesize\ttfamily void output\+\_\+roots (\begin{DoxyParamCaption}\item[{int}]{number\+\_\+roots,  }\item[{double}]{x\+\_\+1,  }\item[{double}]{x\+\_\+2 }\end{DoxyParamCaption})}
+
+
+
+Function that prints roots to the screen. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em function} & -\/ the number of roots and the roots. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{quadratic_8c_a4bc9f1f5ef0fc8b14c38fc821071c037}\label{quadratic_8c_a4bc9f1f5ef0fc8b14c38fc821071c037}} 
+\index{quadratic.c@{quadratic.c}!reset\_color@{reset\_color}}
+\index{reset\_color@{reset\_color}!quadratic.c@{quadratic.c}}
+\doxysubsubsection{\texorpdfstring{reset\_color()}{reset\_color()}}
+{\footnotesize\ttfamily void reset\+\_\+color (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Resets console output color. 
+
+\mbox{\Hypertarget{quadratic_8c_a708dcec6118a7abf8fa97581e915d7e4}\label{quadratic_8c_a708dcec6118a7abf8fa97581e915d7e4}} 
+\index{quadratic.c@{quadratic.c}!set\_color@{set\_color}}
+\index{set\_color@{set\_color}!quadratic.c@{quadratic.c}}
+\doxysubsubsection{\texorpdfstring{set\_color()}{set\_color()}}
+{\footnotesize\ttfamily void set\+\_\+color (\begin{DoxyParamCaption}\item[{const char $\ast$}]{color }\end{DoxyParamCaption})}
+
+
+
+Sets the color of console output. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em function} & -\/ one of the color enumeration. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{quadratic_8c_a89ce9db88e72091cd4621b795ea883a3}\label{quadratic_8c_a89ce9db88e72091cd4621b795ea883a3}} 
+\index{quadratic.c@{quadratic.c}!solve\_equation@{solve\_equation}}
+\index{solve\_equation@{solve\_equation}!quadratic.c@{quadratic.c}}
+\doxysubsubsection{\texorpdfstring{solve\_equation()}{solve\_equation()}}
+{\footnotesize\ttfamily int solve\+\_\+equation (\begin{DoxyParamCaption}\item[{double}]{a,  }\item[{double}]{b,  }\item[{double}]{c,  }\item[{double $\ast$}]{x\+\_\+1,  }\item[{double $\ast$}]{x\+\_\+2 }\end{DoxyParamCaption})}
+
+
+
+Function that solves the equation. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em function} & -\/ the corresponding coefficients of the equation and pointers to the roots. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+result -\/ one of the possible solution scenarios. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{quadratic_8c_a6fd48a4372704606eb5aa285476d7854}\label{quadratic_8c_a6fd48a4372704606eb5aa285476d7854}} 
+\index{quadratic.c@{quadratic.c}!solve\_linear\_equation@{solve\_linear\_equation}}
+\index{solve\_linear\_equation@{solve\_linear\_equation}!quadratic.c@{quadratic.c}}
+\doxysubsubsection{\texorpdfstring{solve\_linear\_equation()}{solve\_linear\_equation()}}
+{\footnotesize\ttfamily int solve\+\_\+linear\+\_\+equation (\begin{DoxyParamCaption}\item[{double}]{b,  }\item[{double}]{c,  }\item[{double $\ast$}]{x\+\_\+1,  }\item[{double $\ast$}]{x\+\_\+2 }\end{DoxyParamCaption})}
+
+
+
+Function that solves linear equation. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em function} & -\/ two corresponding coefficients of the equation and pointers to the roots. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+result -\/ one of the possible solution scenarios. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{quadratic_8c_a5474999d85c608978cb503a0d4e657b9}\label{quadratic_8c_a5474999d85c608978cb503a0d4e657b9}} 
+\index{quadratic.c@{quadratic.c}!solve\_quadratic\_equation@{solve\_quadratic\_equation}}
+\index{solve\_quadratic\_equation@{solve\_quadratic\_equation}!quadratic.c@{quadratic.c}}
+\doxysubsubsection{\texorpdfstring{solve\_quadratic\_equation()}{solve\_quadratic\_equation()}}
+{\footnotesize\ttfamily int solve\+\_\+quadratic\+\_\+equation (\begin{DoxyParamCaption}\item[{double}]{a,  }\item[{double}]{b,  }\item[{double}]{c,  }\item[{double $\ast$}]{x\+\_\+1,  }\item[{double $\ast$}]{x\+\_\+2 }\end{DoxyParamCaption})}
+
+
+
+Function that solves the equation. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em function} & -\/ the corresponding coefficients of the equation and pointers to the roots. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+result -\/ one of the possible solution scenarios. 
+\end{DoxyReturn}

@@ -1,0 +1,68 @@
+\hypertarget{unit__tests_8c}{}\doxysection{C\+:/\+Users/fox5r/programming/c-\/course/quadratic-\/equation/unit\+\_\+tests.c File Reference}
+\label{unit__tests_8c}\index{C:/Users/fox5r/programming/c-\/course/quadratic-\/equation/unit\_tests.c@{C:/Users/fox5r/programming/c-\/course/quadratic-\/equation/unit\_tests.c}}
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$math.\+h$>$}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}unit\+\_\+tests.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}quadratic.\+h\char`\"{}}\newline
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{unit__tests_8c_a7571140d6f32c7821020511b36154fab}{quadratic\+\_\+test\+\_\+run}} (struct \mbox{\hyperlink{structquadratic__test}{quadratic\+\_\+test}} $\ast$test, int $\ast$test\+\_\+number)
+\begin{DoxyCompactList}\small\item\em Function that runs unit tests. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{unit__tests_8c_ae66f6b31b5ad750f1fe042a706a4e3d4}{main}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structquadratic__test}{quadratic\+\_\+test}} \mbox{\hyperlink{unit__tests_8c_a463ba2816871e4edd8b570d09d68ee94}{tests}} \mbox{[}$\,$\mbox{]}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{unit__tests_8c_ae66f6b31b5ad750f1fe042a706a4e3d4}\label{unit__tests_8c_ae66f6b31b5ad750f1fe042a706a4e3d4}} 
+\index{unit\_tests.c@{unit\_tests.c}!main@{main}}
+\index{main@{main}!unit\_tests.c@{unit\_tests.c}}
+\doxysubsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily int main (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{unit__tests_8c_a7571140d6f32c7821020511b36154fab}\label{unit__tests_8c_a7571140d6f32c7821020511b36154fab}} 
+\index{unit\_tests.c@{unit\_tests.c}!quadratic\_test\_run@{quadratic\_test\_run}}
+\index{quadratic\_test\_run@{quadratic\_test\_run}!unit\_tests.c@{unit\_tests.c}}
+\doxysubsubsection{\texorpdfstring{quadratic\_test\_run()}{quadratic\_test\_run()}}
+{\footnotesize\ttfamily void quadratic\+\_\+test\+\_\+run (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{structquadratic__test}{quadratic\+\_\+test}} $\ast$}]{test,  }\item[{int $\ast$}]{test\+\_\+number }\end{DoxyParamCaption})}
+
+
+
+Function that runs unit tests. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em function} & -\/ pointer to test number and the test which need to run. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Variable Documentation}
+\mbox{\Hypertarget{unit__tests_8c_a463ba2816871e4edd8b570d09d68ee94}\label{unit__tests_8c_a463ba2816871e4edd8b570d09d68ee94}} 
+\index{unit\_tests.c@{unit\_tests.c}!tests@{tests}}
+\index{tests@{tests}!unit\_tests.c@{unit\_tests.c}}
+\doxysubsubsection{\texorpdfstring{tests}{tests}}
+{\footnotesize\ttfamily struct \mbox{\hyperlink{structquadratic__test}{quadratic\+\_\+test}} tests\mbox{[}$\,$\mbox{]}}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{= \{\{1, 2, 1, -\/1, -\/1\}, }
+\DoxyCodeLine{                                 \{0, 3, -\/12, 4, 4\}, }
+\DoxyCodeLine{                                 \{2, 3, -\/9, -\/3, 1.5\}, }
+\DoxyCodeLine{                                 \{4, 1, 5, 0, 0\}, }
+\DoxyCodeLine{                                 \{0, 0, 0, 0, 0\}, }
+\DoxyCodeLine{                                 \{0, 0, 5, 0, 0\}, }
+\DoxyCodeLine{                                 \{5, \textcolor{charliteral}{'b'}, 3, \mbox{\hyperlink{quadratic_8h_ae90f47e5461a7f2df8983005401e6064}{POISON}}, \mbox{\hyperlink{quadratic_8h_ae90f47e5461a7f2df8983005401e6064}{POISON}}\}, }
+\DoxyCodeLine{                                 \{1, 5, 6, -\/3, -\/2\}, }
+\DoxyCodeLine{                                 \{\textcolor{charliteral}{'a'}, \textcolor{charliteral}{'a'}, \textcolor{charliteral}{'a'}, \mbox{\hyperlink{quadratic_8h_ae90f47e5461a7f2df8983005401e6064}{POISON}}, \mbox{\hyperlink{quadratic_8h_ae90f47e5461a7f2df8983005401e6064}{POISON}}\}, }
+\DoxyCodeLine{                                 \{INFINITY, INFINITY, INFINITY, \mbox{\hyperlink{quadratic_8h_ae90f47e5461a7f2df8983005401e6064}{POISON}}, \mbox{\hyperlink{quadratic_8h_ae90f47e5461a7f2df8983005401e6064}{POISON}}\},}
+\DoxyCodeLine{                                 \{5, INFINITY, INFINITY, \mbox{\hyperlink{quadratic_8h_ae90f47e5461a7f2df8983005401e6064}{POISON}}, \mbox{\hyperlink{quadratic_8h_ae90f47e5461a7f2df8983005401e6064}{POISON}}\},}
+\DoxyCodeLine{                                 \{INFINITY, 123, INFINITY, \mbox{\hyperlink{quadratic_8h_ae90f47e5461a7f2df8983005401e6064}{POISON}}, \mbox{\hyperlink{quadratic_8h_ae90f47e5461a7f2df8983005401e6064}{POISON}}\}\}}
+
+\end{DoxyCode}
