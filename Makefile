@@ -1,19 +1,22 @@
 
+INCLUDES=include
+SOURCE=source
+TESTS=tests
 
-tests : quadratic.o unit_tests.o
+tests: quadratic.o unit_tests.o
 	gcc -o tests quadratic.o unit_tests.o -lm
 
 equation: main.o quadratic.o
 	gcc -o equation main.o quadratic.o -lm
 
-main.o: main.c quadratic.h
-	gcc -c main.c
+main.o: main.c ${INCLUDES}/quadratic.h
+	gcc -I ${INCLUDES} -c main.c
 
-quadratic.o: quadratic.c quadratic.h
-	gcc -c quadratic.c
+quadratic.o: ${SOURCE}/quadratic.c ${INCLUDES}/quadratic.h
+	gcc -I ${INCLUDES} -c ${SOURCE}/quadratic.c
 
-unit_tests.o: unit_tests.c unit_tests.h quadratic.h
-	gcc -c unit_tests.c
+unit_tests.o: ${TESTS}/unit_tests.c ${INCLUDES}/unit_tests.h ${INCLUDES}/quadratic.h
+	gcc -I ${INCLUDES} -c ${TESTS}/unit_tests.c
 
-clean :
+clean:
 	rm tests main.o quadratic.o unit_tests.o
