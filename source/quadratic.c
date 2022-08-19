@@ -21,7 +21,8 @@ void reset_color()
 void clear_buffer ()
 {
     char ch = 0;
-    while (((ch = getchar()) != '\n') || (ch != EOF));
+
+    while (((ch = getchar()) != '\n') && (ch != EOF));
 }
 
 int input_coefficients(double* a, double* b, double* c)
@@ -40,9 +41,10 @@ int input_coefficients(double* a, double* b, double* c)
         printf("Incorrect input coefficients\n");
         return INCORRECT_INPUT;
     }
-
     else
+    {
         return 0;
+    }    
 }
 
 
@@ -52,9 +54,13 @@ int is_equal(double lhs, double rhs)
     assert(!isnanf(rhs));
 
     if (fabs(lhs - rhs) < EPSILON)
+    {
         return EQUAL;
+    }
     else
+    {
         return UNEQUAL;
+    }
 }
 
 int is_zero(double comparison)
@@ -62,9 +68,13 @@ int is_zero(double comparison)
     assert(!isnanf(comparison));
 
     if(fabs(comparison) < EPSILON)
+    {
         return EQUAL;
+    }
     else
+    {
         return UNEQUAL;
+    }
 }
 
 
@@ -77,37 +87,37 @@ int solve_linear_equation(double b, double c, double* x_1, double* x_2)
     assert(x_2 != NULL);
 
     if(is_zero(b))
+    {
+        if(is_zero(c))
         {
-            if(is_zero(c))
-            {
-                *x_1 = POISON;
-                *x_2 = POISON;
+            *x_1 = POISON;
+            *x_2 = POISON;
 
-                return INFINITELY_ROOTS;   
-            }  
-            else
-            {
-                *x_1 = POISON;
-                *x_2 = POISON;
-
-                return NO_ROOTS;
-            }
-        }
-
+            return INFINITELY_ROOTS;   
+        }  
         else
         {
-            if(is_zero(c))
-            {
-                *x_1 = *x_2 = 0.0;
-                return ONE_ROOT;
-            }
+            *x_1 = POISON;
+            *x_2 = POISON;
 
-            else
-            {
-                *x_1 = *x_2 = -c / b;
-                return ONE_ROOT;
-            }
+            return NO_ROOTS;
         }
+    }
+    else
+    {
+        if(is_zero(c))
+        {
+            *x_1 = *x_2 = 0.0;
+
+            return ONE_ROOT;
+        }
+        else
+        {
+            *x_1 = *x_2 = -c / b;
+
+            return ONE_ROOT;
+        }
+    }
 }
 
 int solve_quadratic_equation(double a, double b, double c, double* x_1, double* x_2)
@@ -124,9 +134,9 @@ int solve_quadratic_equation(double a, double b, double c, double* x_1, double* 
     if (is_zero(discriminant))
     {
         *x_1 = *x_2 = -b / (2 * a);
+
         return ONE_ROOT;
     }
-
     else if (discriminant > 0)
     {
         double sqrt_discriminant = sqrt(discriminant);
@@ -136,7 +146,6 @@ int solve_quadratic_equation(double a, double b, double c, double* x_1, double* 
 
         return TWO_ROOTS;
     }
-
     else
     {
         *x_1 = POISON;
@@ -174,10 +183,13 @@ int solve_equation(double a, double b, double c, double* x_1, double* x_2)
     }
 
     if (is_zero(a))
+    {
         solve_linear_equation(b, c, x_1, x_2);
-
+    }
     else
+    {
         solve_quadratic_equation(a, b, c, x_1, x_2);
+    }
 }
 
 
@@ -192,12 +204,15 @@ void output_roots(int number_roots, double x_1, double x_2)
     case NO_ROOTS:
         printf("No real roots\n");
         break;
+
     case ONE_ROOT: 
         printf("x_1 = x_2 = %.3lf\n", x_1);
         break;
+
     case TWO_ROOTS:
         printf("x_1 = %.3lf, x_2 = %.3lf\n", x_1, x_2);
         break;
+
     case INFINITELY_ROOTS:
         printf("Infinitely roots\n");
         break;
