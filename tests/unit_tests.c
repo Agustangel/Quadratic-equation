@@ -29,6 +29,8 @@ void quadratic_test_run(struct quadratic_test* test, int* test_number)
 
     solve_equation(test->a, test->b, test->c, &x_1, &x_2);
 
+    //TODO ограничить до 120 символов строку 36, 42 
+
     if (is_equal(x_1, test->x_1_expected) && is_equal(x_2, test->x_2_expected))
     {
         printf(BLUE "TEST %d" RESET ": a = %lf, b = %lf, c = %lf " GREEN "SUCCESS" RESET ", expected: x_1 = %lf, x_2 = %lf, got: x_1 = %lf, x_2 = %lf\n", *test_number, test->a, test->b, test->c, \

@@ -20,7 +20,7 @@ void reset_color()
 
 void clear_buffer ()
 {
-    char ch = 0;
+    int ch = 0;
 
     while (((ch = getchar()) != '\n') && (ch != EOF));
 }
@@ -41,10 +41,7 @@ int input_coefficients(double* a, double* b, double* c)
         printf("Incorrect input coefficients\n");
         return INCORRECT_INPUT;
     }
-    else
-    {
-        return 0;
-    }    
+    return 0;
 }
 
 
@@ -53,28 +50,14 @@ int is_equal(double lhs, double rhs)
     assert(!isnanf(lhs));
     assert(!isnanf(rhs));
 
-    if (fabs(lhs - rhs) < EPSILON)
-    {
-        return EQUAL;
-    }
-    else
-    {
-        return UNEQUAL;
-    }
+    return(fabs(lhs - rhs) < epsilon);
 }
 
 int is_zero(double comparison)
 {
     assert(!isnanf(comparison));
 
-    if(fabs(comparison) < EPSILON)
-    {
-        return EQUAL;
-    }
-    else
-    {
-        return UNEQUAL;
-    }
+    return(fabs(comparison) < epsilon);
 }
 
 
@@ -166,7 +149,6 @@ int solve_equation(double a, double b, double c, double* x_1, double* x_2)
         return NO_ROOTS;
     }
 
-
     assert(!isnanf(a));
     assert(!isnanf(b));
     assert(!isnanf(c));
@@ -199,6 +181,7 @@ void output_roots(int number_roots, double x_1, double x_2)
     assert(!isnanf(x_1));
     assert(!isnanf(x_2));
 
+    // TODO default
     switch (number_roots)
     {
     case NO_ROOTS:
@@ -215,6 +198,10 @@ void output_roots(int number_roots, double x_1, double x_2)
 
     case INFINITELY_ROOTS:
         printf("Infinitely roots\n");
+        break;
+
+    default:
+        printf("Incorrect case\n");
         break;
     }
 }
