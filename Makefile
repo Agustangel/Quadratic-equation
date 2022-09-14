@@ -3,8 +3,8 @@ INCLUDES=include
 SOURCE=source
 TESTS=tests
 
-tests: quadratic.o unit_tests.o
-	gcc -o tests quadratic.o unit_tests.o -lm
+test: quadratic.o unit_tests.o
+	gcc -o test quadratic.o unit_tests.o -lm
 
 equation: main.o quadratic.o
 	gcc -o equation main.o quadratic.o -lm
@@ -19,4 +19,4 @@ unit_tests.o: ${TESTS}/unit_tests.c ${INCLUDES}/unit_tests.h ${INCLUDES}/quadrat
 	gcc -I ${INCLUDES} -c ${TESTS}/unit_tests.c
 
 clean:
-	rm tests main.o quadratic.o unit_tests.o
+	rm test main.o quadratic.o unit_tests.o
